@@ -4,6 +4,13 @@
 		"path": "/apiTransporte/apresentacao/rest/index.cfm/onibus",
 		"intervalTime": 15000
 	},
+	"dataStorager": {
+		"host": "localhost",
+		"path": "/all",
+		"intervalTime": 3600000,
+		"mongoDB": "mongodb://localhost:27017",
+		"mongoCollection": "/riobus"
+	},
 	"server": {
 		"port": 81,
 		"maxBusLines": 10
