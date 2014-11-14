@@ -11,9 +11,16 @@ This kind of information is useful for someone else, somewhere else, but not her
 	this is the server code. where we are going to serve a rest interface and the website pages.
 */
 
+// fork will allow us create new threads
+var forker = require('child_process');
+var grabber_fork = forker.fork;
+var storager_fork = forker.fork;
+
 // we start by calling the dataGrabber.js file in another thread.
-var fork = require('child_process').fork, // child processes are different threads that are simply new node threads.
-	child = fork(__dirname + "/dataGrabber.js");
+var child = grabber_fork(__dirname + "/dataGrabber.js"); // child processes are different threads that are simply new node threads.
+
+// start dataStorager using another thread
+var child_storager = storager_fork(__dirname + "/dataStorager.js");
 
 /* I am using this fakeDataGrabber as a temporary dataGrabber impersonation for the times when dadosabertos server
 	is down...

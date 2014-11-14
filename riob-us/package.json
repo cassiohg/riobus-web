@@ -10,7 +10,8 @@
     "express": "~4.10.x",
     "ga": ">=0.0.2",
     "compression": ">=1.2.0",
-    "winston": ">=0.8.3"
+    "winston": ">=0.8.3",
+    "mongoose": ">=3.8.19"
   },
   "engines": {
     "node": "0.10.x"
